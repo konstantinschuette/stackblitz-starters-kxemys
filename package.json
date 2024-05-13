@@ -1,10 +1,10 @@
 {
-  "name": "angular-starter-test",
+  "name": "ng-ct",
   "private": true,
   "scripts": {
     "ng": "ng",
-    "start": "ng test",
-    "build": "ng build"
+    "build": "ng build",
+    "start": "ng run ng-ct:ct"
   },
   "dependencies": {
     "@angular/animations": "^17.2.0",
@@ -23,6 +23,7 @@
     "@angular-devkit/build-angular": "^17.2.2",
     "@angular/cli": "^17.2.2",
     "@angular/compiler-cli": "^17.2.0",
+    "@cypress/schematic": "^2.5.1",
     "@types/jasmine": "~5.1.0",
     "cypress": "^13.9.0",
     "jasmine-core": "~5.1.0",

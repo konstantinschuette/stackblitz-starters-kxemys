@@ -5,7 +5,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "demo": {
+    "ng-ct": {
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
@@ -39,10 +39,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "development": {
-              "buildTarget": "demo:build:development"
+              "buildTarget": "ng-ct:build:development"
             },
             "production": {
-              "buildTarget": "demo:build:production"
+              "buildTarget": "ng-ct:build:production"
             }
           },
           "defaultConfiguration": "development"
@@ -56,6 +56,21 @@
             "assets": [],
             "styles": ["src/global_styles.css"],
             "scripts": []
+          }
+        },
+        "ct": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "ng-ct:serve",
+            "watch": true,
+            "headless": false,
+            "browser": "chrome",
+            "testingType": "component"
+          },
+          "configurations": {
+            "development": {
+              "devServerTarget": "ng-cypress-ct-issue:serve:development"
+            }
           }
         }
       },
